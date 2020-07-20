@@ -13,6 +13,8 @@ docker run -v $(pwd):/code/ -p 5000:5000 -it backchurn:dev bash
 ## Run jupyter
 jupyter notebook --allow-root --ip=0.0.0.0 --port 5000
 
+## Run EDA & Baseline notebboks
+
 ## Train
 make train
 
