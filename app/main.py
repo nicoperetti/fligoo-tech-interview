@@ -26,8 +26,9 @@ def get_prediction(pid, default):
     """
     x = [[pid, default]]
     dfp = pd.DataFrame(x, columns=["product_id", "default"])
-    y = model.predict(dfp)[0]
-    return {'churn': int(y), "score": float(y)}
+    churn = model.predict(dfp)[0]
+    churn_prob = round(model.predict_proba(dfp)[0][1], 4)
+    return {'churn': int(churn), "prob": float(churn_prob)}
 
 
 # API instance
